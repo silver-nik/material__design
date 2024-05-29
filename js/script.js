@@ -19,21 +19,20 @@
             console.log(el);
 
             if (el.getAttribute('data-toggle') === 'true') {
-                el.setAttribute('data-toggle', false)
+                el.setAttribute('data-toggle', false);
+                
+                e.target.closest('nav').classList.remove('vh-100');
                 el.classList.add("d-none");
                 el.classList.remove("d-flex");
 
-                e.target.closest('nav').classList.remove('vh-100');
-                e.target.closest('nav').classList.add('d-none');
-
             } else if (el.getAttribute('data-toggle') === 'false') {
-                el.setAttribute('data-toggle', true)
+                el.setAttribute('data-toggle', true);
+                
+                e.target.closest('nav').classList.add('vh-100');
                 el.classList.remove("d-none");
                 el.classList.add("d-flex");
 
-                e.target.closest('nav').classList.add('vh-100');
-                e.target.closest('nav').classList.add('d-flex');
-
             }
+
         });
     }
